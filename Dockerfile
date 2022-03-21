@@ -19,7 +19,7 @@ COPY package*.json ./
 USER node
 # RUN npm install --save-dev sequelize-cli
 RUN npm install --production
-COPY --from=builder /home/node/app/build ./build
+COPY --from=builder /home/node/app/build/* ./build/
 
 COPY --chown=node:node .env .
 # COPY --chown=node:node .sequelizerc .
@@ -32,4 +32,4 @@ COPY --chown=node:node  /public ./public
 # RUN npm un sequelize-cli
 
 EXPOSE 2700
-CMD [ "node", "build/server.js" ]
+CMD [ "node", "build/index.js" ]
