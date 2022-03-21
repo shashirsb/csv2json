@@ -19,12 +19,12 @@ COPY package*.json ./
 USER node
 # RUN npm install --save-dev sequelize-cli
 RUN npm install --production
-COPY --from=builder /home/node/app/build/* ./build/
+#COPY --from=builder /home/node/app/build/* ./build/
 
 COPY --chown=node:node .env .
 # COPY --chown=node:node .sequelizerc .
-COPY --chown=node:node  /config ./config
-COPY --chown=node:node  /public ./public
+#COPY --chown=node:node  /config ./config
+#COPY --chown=node:node  /public ./public
 
 
 # RUN npm run migrate
