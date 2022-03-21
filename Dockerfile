@@ -3,7 +3,7 @@ ENV NODE_ENV=production
 
 RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
 
-WORKDIR /home/node/app\
+WORKDIR /home/node/app
 COPY package*.json ./
 RUN npm config set unsafe-perm true
 RUN npm install -g typescript
