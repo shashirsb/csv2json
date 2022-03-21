@@ -10,6 +10,7 @@ RUN npm install --save-dev
 RUN npm i --save-dev
 RUN npm install -g typescript --save-dev
 RUN npm install -g ts-node --save-dev
+RUN npm i --save-dev @types/node
 
 # Copy all other source code to work directory
 ADD . /usr/src/app
