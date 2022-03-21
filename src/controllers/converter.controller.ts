@@ -74,8 +74,7 @@ export default class ConverterController extends BaseController {
   // // Find By Id
   async findById(req: Request, res: Response) {
     try {
-      const query = "SELECT * FROM users WHERE id = ? ALLOW FILTERING";
-     
+      const query = "SELECT * FROM users WHERE id = ? ALLOW FILTERING";    
 
       if (query.length > 0) {
         res.json({ status: true, data: query });
