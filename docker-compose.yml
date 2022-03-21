@@ -1,8 +1,8 @@
 version: '3.4'
 
 services:
-  panchayatapi:
-    image: panchayatapi
+  csv2jsonapi:
+    image: csv2jsonapi
     build:
       context: .
       dockerfile: ./Dockerfile

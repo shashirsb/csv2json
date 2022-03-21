@@ -1,5 +1,5 @@
 {
-  "name": "panchayat-api",
+  "name": "csv2json-api",
   "version": "1.0.0",
   "description": "**Edit a file, create a new file, and clone from Bitbucket in under 2 minutes**",
   "main": "index.js",
@@ -13,12 +13,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://vjsoni@bitbucket.org/hybo_ea/panchayat-api.git"
+    "url": "git+https://vjsoni@bitbucket.org/hybo_ea/csv2json-api.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/hybo_ea/panchayat-api#readme",
+  "homepage": "https://bitbucket.org/hybo_ea/csv2json-api#readme",
   "dependencies": {
     "axios": "^0.18.0",
     "bcryptjs": "^2.4.3",

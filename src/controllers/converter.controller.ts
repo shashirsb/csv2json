@@ -30,23 +30,23 @@ export default class ConverterController extends BaseController {
   //     console.log("'" +  params.page.sortBy + ':' + params.page.sort + "'");
 
   //     const queryCount = {
-  //       index: "panchayatdb.users",
+  //       index: "csv2jsondb.users",
   //       type: "users",
   //       body: {
   //         query: {
   //           query_string: {
   //             query: "*" + params.page.filter + "*",
-  //             fields: ["first_name", "last_name", "designation", "panchayat_name"]
+  //             fields: ["first_name", "last_name", "designation", "csv2json_name"]
   //           }
   //         },
-  //         _source: ["id", "first_name", "last_name", "designation", "panchayat_name", "mobile", "is_active", "is_approved"]
+  //         _source: ["id", "first_name", "last_name", "designation", "csv2json_name", "mobile", "is_active", "is_approved"]
   //       }
   //     };
   //     const resultCount = await EQL.executeSearch(queryCount);
   //     const totalCount = resultCount.hits.total;
       
   //     const query = {
-  //       index: "panchayatdb.users",
+  //       index: "csv2jsondb.users",
   //       type: "users",
   //       size: params.page.itemPerPage,
   //       from: (params.page.currentPage - 1) * params.page.itemPerPage,
@@ -54,10 +54,10 @@ export default class ConverterController extends BaseController {
   //         query: {
   //           query_string: {
   //             query: "*" + params.page.filter + "*",
-  //             fields: ["first_name", "last_name", "designation", "panchayat_name"]
+  //             fields: ["first_name", "last_name", "designation", "csv2json_name"]
   //           }
   //         },
-  //         _source: ["id", "first_name", "last_name", "designation", "panchayat_name", "mobile", "is_active", "is_approved"]
+  //         _source: ["id", "first_name", "last_name", "designation", "csv2json_name", "mobile", "is_active", "is_approved"]
   //       }
   //     };
   //     const result = await EQL.executeSearch(query);
@@ -135,16 +135,16 @@ export default class ConverterController extends BaseController {
   //   }
 
   //   if (params.location === "state") {
-  //     query = `SELECT id, first_name, last_name, district_name, taluk_name, panchayat_name, designation FROM users WHERE state_id = ? AND role_level ${qOpt} ? ALLOW FILTERING;`;
+  //     query = `SELECT id, first_name, last_name, district_name, taluk_name, csv2json_name, designation FROM users WHERE state_id = ? AND role_level ${qOpt} ? ALLOW FILTERING;`;
   //     values = [params.id, roleLevel];
   //   } else if (params.location === "district") {
-  //     query = `SELECT id, first_name, last_name, district_name, taluk_name, panchayat_name, designation FROM users WHERE district_id = ? AND role_level ${qOpt} ? ALLOW FILTERING;`;
+  //     query = `SELECT id, first_name, last_name, district_name, taluk_name, csv2json_name, designation FROM users WHERE district_id = ? AND role_level ${qOpt} ? ALLOW FILTERING;`;
   //     values = [params.id, roleLevel];
   //   } else if (params.location === "taluk") {
-  //     query = `SELECT id, first_name, last_name, district_name, taluk_name, panchayat_name, designation FROM users WHERE taluk_id = ? AND role_level ${qOpt} ? ALLOW FILTERING;`;
+  //     query = `SELECT id, first_name, last_name, district_name, taluk_name, csv2json_name, designation FROM users WHERE taluk_id = ? AND role_level ${qOpt} ? ALLOW FILTERING;`;
   //     values = [params.id, roleLevel];
-  //   } else if (params.location === "panchayat") {
-  //     query = `SELECT id, first_name, last_name, district_name, taluk_name, panchayat_name, designation FROM users WHERE panchayat_id = ? AND role_level ${qOpt} ? ALLOW FILTERING;`;
+  //   } else if (params.location === "csv2json") {
+  //     query = `SELECT id, first_name, last_name, district_name, taluk_name, csv2json_name, designation FROM users WHERE csv2json_id = ? AND role_level ${qOpt} ? ALLOW FILTERING;`;
   //     values = [params.id, roleLevel];
   //   }
 
@@ -175,18 +175,18 @@ export default class ConverterController extends BaseController {
   //   }
 
   //   if (params.location === "state") {
-  //     query = `SELECT id, first_name, last_name, district_name, taluk_name, panchayat_name, designation FROM users WHERE state_id = ? AND role_level = ? ALLOW FILTERING;`;
+  //     query = `SELECT id, first_name, last_name, district_name, taluk_name, csv2json_name, designation FROM users WHERE state_id = ? AND role_level = ? ALLOW FILTERING;`;
   //     values = [params.id, roleLevel];
   //   } else if (params.location === "district") {
-  //     query = `SELECT id, first_name, last_name, district_name, taluk_name, panchayat_name, designation FROM users WHERE district_id = ? AND role_level = ? ALLOW FILTERING;`;
+  //     query = `SELECT id, first_name, last_name, district_name, taluk_name, csv2json_name, designation FROM users WHERE district_id = ? AND role_level = ? ALLOW FILTERING;`;
   //     values = [params.id, roleLevel];
   //   } else if (params.location === "taluk") {
   //     query =
-  //       "SELECT id, first_name, last_name, district_name, taluk_name, panchayat_name, designation FROM users WHERE taluk_id = ? AND role_level = ? ALLOW FILTERING;";
+  //       "SELECT id, first_name, last_name, district_name, taluk_name, csv2json_name, designation FROM users WHERE taluk_id = ? AND role_level = ? ALLOW FILTERING;";
   //     values = [params.id, roleLevel];
-  //   } else if (params.location === "panchayat") {
+  //   } else if (params.location === "csv2json") {
   //     query =
-  //       "SELECT id, first_name, last_name, district_name, taluk_name, panchayat_name, designation FROM users WHERE panchayat_id = ? AND role_level = ? ALLOW FILTERING;";
+  //       "SELECT id, first_name, last_name, district_name, taluk_name, csv2json_name, designation FROM users WHERE csv2json_id = ? AND role_level = ? ALLOW FILTERING;";
   //     values = [params.id, roleLevel];
   //   }
 
@@ -218,7 +218,7 @@ export default class ConverterController extends BaseController {
   //           id, parent_id, role_id, role_name, first_name, last_name, designation,
   //           password_hash, salt_key, email, mobile, gender, birth_date, 
   //           father_name, mother_name, state_id, state_name, district_id, district_name, 
-  //           taluk_id, taluk_name, panchayat_id, panchayat_name, role_level, approved_by,
+  //           taluk_id, taluk_name, csv2json_id, csv2json_name, role_level, approved_by,
   //           is_active, is_approved, is_email_verified, is_mobile_verified, created_by, created_at
   //         )
   //         VALUES(
@@ -251,8 +251,8 @@ export default class ConverterController extends BaseController {
   //         params.district_name,
   //         params.taluk_id,
   //         params.taluk_name,
-  //         params.panchayat_id,
-  //         params.panchayat_name,
+  //         params.csv2json_id,
+  //         params.csv2json_name,
   //         params.role_level,
   //         params.approved_by,
   //         params.is_active,
@@ -349,7 +349,7 @@ export default class ConverterController extends BaseController {
   //       UPDATE users
   //       SET first_name = ?, last_name =?, email = ?, mobile = ?, is_email_verified = ?, is_mobile_verified = ?,
   //       gender = ?, designation = ?, birth_date = ?, state_id = ?, state_name = ?, district_id = ?, district_name = ?,
-  //       taluk_id = ?, taluk_name = ?, panchayat_id = ?, panchayat_name = ?, role_id = ?, role_name = ?, role_level = ?,
+  //       taluk_id = ?, taluk_name = ?, csv2json_id = ?, csv2json_name = ?, role_id = ?, role_name = ?, role_level = ?,
   //       is_active = ?, approved_by = ?, is_approved = ?, parent_id = ?
   //       WHERE id = ?
   //     `;
@@ -369,8 +369,8 @@ export default class ConverterController extends BaseController {
   //         params.district_name,
   //         params.taluk_id,
   //         params.taluk_name,
-  //         params.panchayat_id,
-  //         params.panchayat_name,
+  //         params.csv2json_id,
+  //         params.csv2json_name,
   //         params.role_id,
   //         params.role_name,
   //         params.role_level,
@@ -498,7 +498,7 @@ export default class ConverterController extends BaseController {
   //     const params = req.body;
 
   //     const code = Nx.utils.getRandam(1000, 9999);
-  //     const message = `Karanataka Panchayat Admin Portal\n verification code : ${code}`;
+  //     const message = `Karanataka csv2json Admin Portal\n verification code : ${code}`;
 
   //     const queryUpdateUser = `UPDATE users SET mobile_verification_code = ? WHERE id = ?;`;
   //     const resultUpdate = await CQL.executeQuery(queryUpdateUser, [
@@ -557,7 +557,7 @@ export default class ConverterController extends BaseController {
   //         Nx.mail.sendMail(mailMsg.to, mailMsg.subject, mailMsg.message, false);
 
   //         const message = `
-  //           Karanataka Panchayat Admin Portal
+  //           Karanataka csv2json Admin Portal
   //           Your account has been activated successfully.
   //         `;
   //         const smsResponse = await Nx.sms.sendSms(user.mobile, message);
