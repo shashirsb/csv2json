@@ -4,7 +4,7 @@ WORKDIR /usr/src/app
 
 # Only copy the package.json file to work directory
 COPY package.json .
-COPY * /usr/src/app
+COPY * /usr/src/app/
 
 # Install all Packages
 RUN npm install --save
