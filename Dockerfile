@@ -21,7 +21,7 @@ USER node
 RUN npm install --production
 #COPY --from=builder /home/node/app/build/* ./build/
 
-COPY --chown=node:node .env .
+#COPY --chown=node:node .env .
 # COPY --chown=node:node .sequelizerc .
 #COPY --chown=node:node  /config ./config
 #COPY --chown=node:node  /public ./public
