@@ -10,7 +10,7 @@ COPY * /usr/src/app/
 RUN npm install --save
 RUN npm install -g typescript --save
 RUN npm install -g ts-node --save
-RUN npm install -g npm@8.5.
+RUN npm install -g npm@8.5.5
 RUN npm install -g --save typescript @types/node 
 
 # Copy all other source code to work directory
