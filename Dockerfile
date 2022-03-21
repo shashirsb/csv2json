@@ -1,24 +1,23 @@
-FROM node:lts-alpine
-ENV NODE_ENV=production
-WORKDIR /usr/src/app
+FROM node:14-alpine3.10 as ts-compiler
+WORKDIR /usr/app
+COPY package*.json ./
+COPY tsconfig*.json ./
+RUN npm install
+COPY . ./
+RUN npm run build
 
-# Only copy the package.json file to work directory
-COPY package.json .
-COPY * /usr/src/app/
 
-# Install all Packages
-RUN npm install -g --save
-RUN npm install -g typescript --save
-RUN npm install -g ts-node --save
-RUN npm install -g npm@8.5.5
-RUN npm install -g --save typescript @types/node 
+FROM node:14-alpine3.10 as ts-remover
+WORKDIR /usr/app
+COPY --from=ts-compiler /usr/app/package*.json ./
+COPY --from=ts-compiler /usr/app/build ./
+RUN npm install --only=production
 
-# Copy all other source code to work directory
-ADD . /usr/src/app
-RUN tsc
-# TypeScript
-# RUN npm run tsc
 
-# Start
-CMD [ "npm", "start" ]
+FROM gcr.io/distroless/nodejs:14
+WORKDIR /usr/app
+COPY --from=ts-remover /usr/app ./
+USER 1000
+CMD ["npm", "index.js"]
 EXPOSE 7001
+
