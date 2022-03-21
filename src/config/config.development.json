@@ -1,0 +1,29 @@
+{
+    "dbConfig": {
+      "mongoUrl" :"mongodb://localhost:27017/DonateDb",
+      "host": "mongodb://localhost",
+      "port": 27017,
+      "dbName": "DonateDb"
+    },
+    "emailConfig": {
+      "transport": {
+        "host": "smtpout.asia.secureserver.net",
+        "port": "smtpout.asia.secureserver.net",
+        "secure": "smtpout.asia.secureserver.net",
+        "auth": {
+          "user": "info@kabbalamma.org",
+          "pass": "info123!"
+        }
+      },
+      "options": {
+        "from": "info@kabbalamma.org"
+      }
+    },
+    "smsConfig": {
+      "url": "http://bulksms.smsroot.com/app/smsapi/index.php",
+      "apiKey": "45B56DF8438A15",
+      "routeid": 13,
+      "campaign": 0,
+      "senderid": "SMSDMO"
+    }
+  }  

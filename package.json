@@ -1,0 +1,58 @@
+{
+  "name": "panchayat-api",
+  "version": "1.0.0",
+  "description": "**Edit a file, create a new file, and clone from Bitbucket in under 2 minutes**",
+  "main": "index.js",
+  "scripts": {
+    "server": "tsc && nodemon ./dist/index.js",
+    "start": "node ./dist/index.js",
+    "ts:watch": "tsc -w",
+    "build": "tsc",
+    "dev": "ts-node ./src/server.ts",
+    "prod": "npm run build && npm run start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://vjsoni@bitbucket.org/hybo_ea/panchayat-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/hybo_ea/panchayat-api#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "cassandra-driver": "^3.5.0",
+    "compression": "^1.7.3",
+    "cors": "^2.8.4",
+    "dotenv": "^6.2.0",
+    "elasticsearch": "^15.3.0",
+    "express": "^4.16.3",
+    "formidable": "^1.2.1",
+    "helmet": "^3.13.0",
+    "jsonwebtoken": "^8.3.0",
+    "lodash": "^4.17.11",
+    "morgan": "^1.9.1",
+    "nodemailer": "^4.6.8",
+    "path": "^0.12.7",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2"
+  },
+  "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/bcryptjs": "^2.4.1",
+    "@types/body-parser": "^1.17.0",
+    "@types/cassandra-driver": "^3.4.0",
+    "@types/cors": "^2.8.4",
+    "@types/dotenv": "^6.1.0",
+    "@types/express": "^4.16.0",
+    "@types/formidable": "^1.0.31",
+    "@types/jsonwebtoken": "^7.2.8",
+    "@types/node": "^10.9.4",
+    "@types/nodemailer": "^4.6.5",
+    "@types/request": "^2.47.1",
+    "tslint": "^5.11.0",
+    "typescript": "^3.0.3"
+  }
+}
