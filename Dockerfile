@@ -32,4 +32,4 @@ RUN npm install --production
 # RUN npm un sequelize-cli
 
 EXPOSE 2700
-CMD [ "node", "build/index.js" ]
+CMD [ "node", "build/server.js" ]
