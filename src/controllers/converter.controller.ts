@@ -2,7 +2,7 @@ import * as bcryptjs from "bcryptjs";
 import { Request, Response } from "express";
 import * as _ from "lodash";
 
-import EncryptionModel from "../models/encryption.model";
+
 import BaseController from "./base.controller";
 
 
