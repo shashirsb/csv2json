@@ -6,9 +6,10 @@ WORKDIR /usr/src/app
 COPY package.json .
 
 # Install all Packages
-RUN npm install
-RUN npm install -g typescript
-RUN npm install -g ts-node
+RUN npm install --save-dev
+RUN npm i --save-dev
+RUN npm install -g typescript --save-dev
+RUN npm install -g ts-node --save-dev
 
 # Copy all other source code to work directory
 ADD . /usr/src/app
