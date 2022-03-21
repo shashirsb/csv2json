@@ -1,12 +1,11 @@
 import * as bodyParser from "body-parser";
-import * as cassandra from "cassandra-driver";
 import * as compression from "compression";
 import * as cors from "cors";
 import * as express from "express";
-import * as fs from "fs";
+
 import * as helmet from "helmet";
 import * as logger from "morgan";
-import * as util from "util";
+
 
 import ApiRoutes from "./routes/api.routes";
 

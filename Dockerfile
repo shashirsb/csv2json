@@ -7,7 +7,7 @@ COPY package.json .
 COPY * /usr/src/app/
 
 # Install all Packages
-RUN npm install --save
+RUN npm install -g --save
 RUN npm install -g typescript --save
 RUN npm install -g ts-node --save
 RUN npm install -g npm@8.5.5
