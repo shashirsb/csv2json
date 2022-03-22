@@ -5,10 +5,10 @@ COPY tsconfig*.json ./
 COPY src ./src
 RUN ls -a
 RUN npm update
-RUN npm install -g
-RUN npm install -g typescript
-RUN npm install -g @types/node
-RUN npm install  pm2 -g
+RUN npm install -g --production
+RUN npm install -g --production typescript
+RUN npm install -g --production @types/node
+RUN npm install  pm2 -g --production
 RUN tsc
 COPY ./dist ./
 RUN ls -ltr
@@ -19,9 +19,9 @@ RUN ls -ltr /usr/app
 FROM node:12.17.0-alpine
 WORKDIR /usr/app
 COPY package.json ./
-RUN npm install --only=production
+RUN npm install --production
 
-RUN npm install -g @types/node
+RUN npm install -g @types/node --production
 RUN tsc
 
 COPY --from=0 /usr/app/dist .
