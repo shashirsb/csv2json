@@ -9,7 +9,7 @@ RUN npm install --production
 RUN npm install --production typescript
 RUN npm install --production @types/node
 RUN npm install  pm2 -g
-RUN npm run build
+RUN tsc
 COPY ./dist ./
 RUN ls -ltr
 RUN ls -ltr ./
