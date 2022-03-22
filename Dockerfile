@@ -3,10 +3,11 @@ WORKDIR /usr/app
 COPY package*.json ./
 COPY tsconfig*.json ./
 RUN npm update
-RUN npm install -save
-RUN npm install --save-dev @types/node
+RUN npm install --production
+RUN npm install --production typescript
+RUN npm install --production @types/node
 COPY . ./
-RUN tsc
+RUN npm run tsc
 
 
 # FROM node:14-alpine3.10 as ts-remover
