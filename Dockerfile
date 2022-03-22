@@ -3,6 +3,7 @@ WORKDIR /usr/app
 COPY package*.json ./
 COPY tsconfig*.json ./
 RUN npm install
+RUN npm install --save-dev @types/node
 COPY . ./
 RUN npm run build
 
@@ -12,6 +13,7 @@ WORKDIR /usr/app
 COPY --from=ts-compiler /usr/app/package*.json ./
 COPY --from=ts-compiler /usr/app/dist ./
 RUN ls -ltr
+RUN ls -ltr /usr/app/dist
 RUN npm install --only=production
 
 
