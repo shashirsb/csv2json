@@ -20,8 +20,11 @@ FROM node:12.17.0-alpine
 WORKDIR /usr/app
 COPY package.json ./
 RUN npm install --only=production
-COPY --from=0 /usr/app/dist .
+
+RUN npm install -g @types/node
 RUN tsc
+
+COPY --from=0 /usr/app/dist .
 EXPOSE 80
 CMD ["npm","app.js"]
 
