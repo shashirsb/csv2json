@@ -6,7 +6,7 @@ RUN npm update
 RUN npm install --production
 RUN npm install --production typescript
 RUN npm install --production @types/node
-RUN npm run tsc
+RUN npm build
 
 
 # FROM node:14-alpine3.10 as ts-remover
