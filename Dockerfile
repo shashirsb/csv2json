@@ -6,7 +6,6 @@ RUN npm update
 RUN npm install --production
 RUN npm install --production typescript
 RUN npm install --production @types/node
-COPY . ./
 RUN npm run tsc
 
 
