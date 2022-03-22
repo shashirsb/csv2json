@@ -14,7 +14,7 @@ WORKDIR /usr/app
 COPY --from=ts-compiler /usr/app/package*.json ./
 COPY --from=ts-compiler /usr/app/dist ./
 RUN ls -ltr
-RUN ls -ltr /usr/app/dist
+RUN ls -ltr ./
 RUN npm install --only=production
 
 
