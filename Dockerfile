@@ -2,6 +2,7 @@ FROM node:14-alpine3.10 as ts-compiler
 WORKDIR /usr/app
 COPY package*.json ./
 COPY tsconfig*.json ./
+RUN npm update
 RUN npm install
 RUN npm install --save-dev @types/node
 COPY . ./
