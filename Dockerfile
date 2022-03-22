@@ -6,7 +6,7 @@ RUN npm update
 RUN npm install -save
 RUN npm install --save-dev @types/node
 COPY . ./
-RUN npm run build
+RUN tsc
 
 
 # FROM node:14-alpine3.10 as ts-remover
@@ -23,6 +23,6 @@ RUN npm run build
 # WORKDIR /usr/app
 # COPY --from=ts-remover /usr/app ./
 # USER 1000
-CMD ["npm", "index.js"]
+CMD ["npm", " start"]
 EXPOSE 7001
 
