@@ -1,3 +1,5 @@
+
+
 FROM node:14-alpine3.10 as ts-compiler
 WORKDIR /usr/app
 COPY package*.json ./
@@ -11,16 +13,12 @@ RUN npm install -g --production @types/node
 RUN npm install  pm2 -g --production
 RUN tsc
 COPY ./dist ./
-RUN ls -ltr
-RUN ls -ltr ./
-RUN ls -ltr /usr/app
 
 ## this is stage two , where the app actually runs
 FROM node:12.17.0-alpine
 WORKDIR /usr/app
 COPY package.json ./
 RUN npm install --production
-
 RUN npm install -g @types/node --production
 RUN tsc
 
