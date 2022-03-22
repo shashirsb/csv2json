@@ -15,6 +15,7 @@ COPY --from=ts-compiler /usr/app/package*.json ./
 COPY --from=ts-compiler /usr/app/dist ./
 RUN ls -ltr
 RUN ls -ltr ./
+RUN ls -ltr /usr/app
 RUN npm install --only=production
 
 
